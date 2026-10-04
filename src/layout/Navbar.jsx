@@ -1,7 +1,9 @@
 import React from 'react'
 const navLinks =[
-  
-
+  { href: "#about", label:"About" },
+  { href:"#projects", label:"Projects"},
+  { href:" #experience" , label: "Experience"},
+  { href:"#testimonials", label:"Testimonials"},
 ];
 
 const Navbar = () => {
@@ -16,7 +18,9 @@ const Navbar = () => {
 
         <div>
           <div>
-
+            {navLinks.map((link,index)=>(
+              <a href ={link.href}>{link.label}</a>
+            ))}
           </div>
         </div>
       </nav>
