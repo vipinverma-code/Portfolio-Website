@@ -1,12 +1,12 @@
 import Navbar from "./layout/Navbar";
 // ye relative import hai
-import Hero from "@/sections/Hero"; 
+// import Hero from "@/sections/Hero"; 
 // alias ki help se import hai ye
- import About from "./sections/About";
- import Projects from "./sections/Projects";
- import Experience from './sections/Experience';
- import Testimonials from './sections/Testimonials';
- import Contact from './sections/Contact'
+//  import About from "./sections/About";
+//  import Projects from "./sections/Projects";
+//  import Experience from './sections/Experience';
+//  import Testimonials from './sections/Testimonials';
+//  import Contact from './sections/Contact'
 
 function App(){
     return(
@@ -14,16 +14,14 @@ function App(){
         <div className="min-h-screen overflow-x-hidden">
             <Navbar/>
             <main>
-                <Hero/>
-                <About/>
+                {/* <Hero/> */}
+                {/* <About/>
                 <Projects/>
                 <Experience/>
                 <Testimonials/>
-                <Contact/>
+                <Contact/> */}
             </main>
-
         </div>
-
         </>
     )
 }
