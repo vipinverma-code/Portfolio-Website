@@ -9,7 +9,7 @@ const Hero = () => {
         <img src="/hero-bg.jpg" alt="Hero image"
          className='w-full h-full object-cover opacity-40'/>
       </div>
-
+      
       {/* Green Dots */}
       <div className='absolute inset-0 overflow:hidden pointer-events-none'>
         {[...Array(30)].map((_,i)=>(

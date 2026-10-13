@@ -39,13 +39,11 @@ const Navbar = () => {
         <div className="hidden md:block">
           <Button size="sm">Contact Me</Button>
         </div>
-
         {/* Mobile Menu Button */}
         <button className="md:hidden p-2 text-foreground cursor-pointer" onClick={()=> setIsMobileMenuOpen((prev)=> !prev)}>
           {isMobileMenuOpen ? <X size={24}/> :<Menu size={24} />}
         </button>
       </nav>
-
       {/* Mobile Menu*/}
 
       {isMobileMenuOpen && (
@@ -68,5 +66,4 @@ const Navbar = () => {
     </header>
   );
 };
-
 export default Navbar;
