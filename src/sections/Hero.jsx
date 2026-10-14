@@ -41,7 +41,24 @@ const Hero = () => {
                 Software Engineer · Frontend Developer
               </span>
             </div>
+            {/* Headline */}
+            <div className="space-y-4">
+              <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold leading-tight animate-fade-in animation-delay-100">
+                Crafting <span className="text-primary glow-text">digital</span>
+                <br />
+                experiences with
+                <span className="font-serif italic font-normal text-white">
+                  precision.
+                </span>
+              </h1>
+              <p className="text-lg text-muted-foreground max-w-lg animate-fade-in animation-delay-800"> 
+                Hi, I'm  Vipin Verma -  a Software engineer specializing in Javascript and React. I build scalable, performant 
+                web applications that users love.
+              </p>
+              
+            </div>
           </div>
+          {/* Right Column Profile Image */}
         </div>
       </div>
     </section>
