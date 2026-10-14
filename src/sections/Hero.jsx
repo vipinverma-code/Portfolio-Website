@@ -55,7 +55,6 @@ const Hero = () => {
                 Hi, I'm  Vipin Verma -  a Software engineer specializing in Javascript and React. I build scalable, performant 
                 web applications that users love.
               </p>
-              
             </div>
           </div>
           {/* Right Column Profile Image */}
