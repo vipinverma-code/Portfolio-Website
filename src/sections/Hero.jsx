@@ -2,7 +2,7 @@ import React from "react";
 import { ArrowRight } from "lucide-react";
 import Button from "../components/Button";
 import { AnimatedBorderButton } from "../components/AnimatedBorderButton";
-import { Download } from "lucide-react";
+import { FaGithub, FaLinkedinIn } from "react-icons/fa";
 const Hero = () => {
   return (
     <section className="relative min-h-screen flex items-center overflow-hidden">
@@ -19,6 +19,7 @@ const Hero = () => {
       <div className="absolute inset-0 overflow:hidden pointer-events-none">
         {[...Array(30)].map((_, i) => (
           <div
+           key={i}
             className="absolute w-1.5 h-1.5 rounded-full opacity-60"
             style={{
               backgroundColor: "#20B2A6",
@@ -54,20 +55,35 @@ const Hero = () => {
                   precision.
                 </span>
               </h1>
-              <p className="text-lg text-muted-foreground max-w-lg animate-fade-in animation-delay-800"> 
-                Hi, I'm  Vipin Verma -  a Software engineer specializing in Javascript and React. I build scalable, performant 
-                web applications that users love.
+              <p className="text-lg text-muted-foreground max-w-lg animate-fade-in animation-delay-800">
+                Hi, I'm Vipin Verma - a Software engineer specializing in
+                Javascript and React. I build scalable, performant web
+                applications that users love.
               </p>
             </div>
             {/* CTAs*/}
             <div className="flex flex-wrap gap-4 animate-fade-in animation-delay-300">
               <Button size="lg">
-                Contact Me <ArrowRight className="w-5 h-5"/>
+                Contact Me <ArrowRight className="w-5 h-5" />
               </Button>
-              <AnimatedBorderButton>
-                <Download className="w-5 h-5" />
-                Download CV
-              </AnimatedBorderButton>
+              <AnimatedBorderButton />
+            </div>
+
+            {/* Social Links */}
+            <div className="flex items-center gap-4 animate-fade-in animation-delay-400">
+              <span className="text-sm text-muted-foreground">Follow</span>
+              {[
+                { icon: FaGithub, href: "#" },
+                { icon: FaLinkedinIn, href: "#" },
+              ].map((social, idx) => (
+                <a
+                  key={idx}
+                  href={social.href}
+                  className="p-2 rounded-full glass hover:bg-primary/10 hover:text-primary transition-all duration-300"
+                >
+                  {<social.icon className="w-5 h-5" />}
+                </a>
+              ))}
             </div>
           </div>
           {/* Right Column Profile Image */}
