@@ -1,6 +1,7 @@
 import Navbar from "./layout/Navbar";
 // ye relative import hai
 import Hero from "@/sections/Hero"; 
+import About from "./sections/About";
 // alias ki help se import hai ye
 //  import About from "./sections/About";
 //  import Projects from "./sections/Projects";
@@ -15,6 +16,7 @@ function App(){
             <Navbar/>
             <main>
                 <Hero/>
+                <About/>
                 {/* <About/>
                 <Projects/>
                 <Experience/>

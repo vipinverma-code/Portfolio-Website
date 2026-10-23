@@ -1,11 +1,10 @@
 import React from "react";
-import { ArrowRight,ChevronDown} from "lucide-react";
+import { ArrowRight, ChevronDown } from "lucide-react";
 import Button from "../components/Button";
 import { AnimatedBorderButton } from "../components/AnimatedBorderButton";
 import { FaGithub, FaLinkedinIn } from "react-icons/fa";
-import About from "./About";
 
-const skills =[
+const skills = [
   "React",
   "PostgreSQL",
   "HTML5",
@@ -14,7 +13,7 @@ const skills =[
   "TailwindCSS",
   "Git",
   "Github",
-]
+];
 const Hero = () => {
   return (
     <section className="relative min-h-screen flex-col items-center overflow-hidden">
@@ -164,7 +163,6 @@ const Hero = () => {
           <ChevronDown className="w-6 h-6 animate-bounce" />
         </a>
       </div>
-      <About />
     </section>
   );
 };
