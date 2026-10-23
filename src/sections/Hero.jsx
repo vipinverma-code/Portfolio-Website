@@ -71,7 +71,7 @@ const Hero = () => {
 
             {/* Social Links */}
             <div className="flex items-center gap-4 animate-fade-in animation-delay-400">
-              <span className="text-sm text-muted-foreground">Follow</span>
+              <span className="text-sm text-muted-foreground">Follow me:</span>
               {[
                 { icon: FaGithub, href: "#" },
                 { icon: FaLinkedinIn, href: "#" },
@@ -87,6 +87,14 @@ const Hero = () => {
             </div>
           </div>
           {/* Right Column Profile Image */}
+         <div className="relative animate-fade-in animation-delay-300">
+          {/* Profile Image */}
+          <div className="relative max-w-md mx-auto">
+            <div className="relative glass rounded-3xl p-2 glow-border">
+              <img src="/profile-photo.png" alt="Vipin Verma" className="w-full aspect-[4/5] object-cover rounded-2xl"/>
+            </div>
+          </div>
+         </div>
         </div>
       </div>
     </section>
