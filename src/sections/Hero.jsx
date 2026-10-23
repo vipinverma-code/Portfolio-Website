@@ -3,6 +3,7 @@ import { ArrowRight,ChevronDown} from "lucide-react";
 import Button from "../components/Button";
 import { AnimatedBorderButton } from "../components/AnimatedBorderButton";
 import { FaGithub, FaLinkedinIn } from "react-icons/fa";
+import About from "./About";
 
 const skills =[
   "React",
@@ -84,8 +85,11 @@ const Hero = () => {
             <div className="flex items-center gap-4 animate-fade-in animation-delay-400">
               <span className="text-sm text-muted-foreground">Follow me:</span>
               {[
-                { icon: FaGithub, href: "#" },
-                { icon: FaLinkedinIn, href: "#" },
+                { icon: FaGithub, href: "https://github.com/vipinverma-code" },
+                {
+                  icon: FaLinkedinIn,
+                  href: "https://www.linkedin.com/in/vipin-verma-it/",
+                },
               ].map((social, idx) => (
                 <a
                   key={idx}
@@ -160,6 +164,7 @@ const Hero = () => {
           <ChevronDown className="w-6 h-6 animate-bounce" />
         </a>
       </div>
+      <About />
     </section>
   );
 };
