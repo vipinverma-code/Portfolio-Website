@@ -1,5 +1,5 @@
 import React from "react";
-import { ArrowRight } from "lucide-react";
+import { ArrowRight,ChevronDown} from "lucide-react";
 import Button from "../components/Button";
 import { AnimatedBorderButton } from "../components/AnimatedBorderButton";
 import { FaGithub, FaLinkedinIn } from "react-icons/fa";
@@ -141,13 +141,24 @@ const Hero = () => {
           <div className="flex animate-marquee">
             {[...skills, ...skills].map((skill, idx) => (
               <div key={idx} className="flex-shrink-0 px-8 py-4">
-                <span className="text-xl font-semibold text-muted-foreground transition-colors">
+                <span className="text-xl font-semibold text-muted-foreground/50 hover:text-muted-foreground transition-colors">
                   {skill}
                 </span>
               </div>
             ))}
           </div>
         </div>
+      </div>
+
+      {/* Scroll */}
+      <div className="flex justify-center mt-8 mb-6 animate-fade-in animation-delay-800">
+        <a
+          href="#about"
+          className="flex flex-col items-center gap-2 text-muted-foreground hover:text-primary"
+        >
+          <span className="text-xs uppercase tracking-wider">Scroll</span>
+          <ChevronDown className="w-6 h-6 animate-bounce" />
+        </a>
       </div>
     </section>
   );
