@@ -1,7 +1,7 @@
 import Navbar from "./layout/Navbar";
 // ye relative import hai
-import Hero from "@/sections/Hero"; 
-import About from "./sections/About";
+import Hero from "./sections/Hero";
+import About from "./components/About";
 import Projects from "./sections/Projects";
 // alias ki help se import hai ye
 //  import About from "./sections/About";
