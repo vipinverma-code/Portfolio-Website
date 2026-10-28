@@ -40,7 +40,7 @@ const projects = [
       "A simple and interactive task management application that allows users to add, edit, and delete tasks. Built to practice React state management and CRUD operations.",
     image: "/projects/project4.png",
     tags: ["React.js", "Javascript", "Bootstrap"],
-    link: "#",
+    link: "https://vipinvermatodoapp.netlify.app",
     github: "https://github.com/vipinverma-code/Todo-App",
   },
 
