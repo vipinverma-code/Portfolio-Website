@@ -19,6 +19,7 @@ function App(){
                 <Hero/>
                 <About/>
                 <Projects/>
+                <Experience/>
                 {/* <About/>
                 <Projects/>
                 <Experience/>
