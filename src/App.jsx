@@ -3,6 +3,7 @@ import Navbar from "./layout/Navbar";
 import Hero from "./sections/Hero";
 import About from "./components/About";
 import Projects from "./sections/Projects";
+import Experience from "./sections/Experience";
 // alias ki help se import hai ye
 //  import About from "./sections/About";
 //  import Projects from "./sections/Projects";
