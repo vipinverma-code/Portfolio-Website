@@ -4,6 +4,7 @@ import Hero from "./sections/Hero";
 import About from "./components/About";
 import Projects from "./sections/Projects";
 import Experience from "./sections/Experience";
+import Training from "./components/Training";
 // alias ki help se import hai ye
 //  import About from "./sections/About";
 //  import Projects from "./sections/Projects";
@@ -21,6 +22,7 @@ function App(){
                 <About/>
                 <Projects/>
                 <Experience/>
+                <Training/>
                 {/* <About/>
                 <Projects/>
                 <Experience/>
