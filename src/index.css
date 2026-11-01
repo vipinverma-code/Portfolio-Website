@@ -1,5 +1,4 @@
 @import "tailwindcss";
-
 /* set up of our tailwindcss structure  */
 @theme {
   --color-background: #0f1418;
@@ -25,7 +24,7 @@
 
 @layer base {
   html{
-    scroll-behaviour: smooth;
+    scroll-behavior: smooth;
   }
 }
 
@@ -179,8 +178,6 @@ body {
         0 0 80px color-mix(in srgb, var(--color-primary) 25%, transparent);
     }
   }
-
 }
-
 
 
