@@ -83,14 +83,6 @@ const Training = () => {
                 Certifications.
               </span>
             </h2>
-
-            <span
-              className="text-sm text-muted-foreground
-              border border-border rounded-full
-              px-4 py-2 w-fit shrink-0"
-            >
-              03 Credentials
-            </span>
           </div>
 
           <p
@@ -124,17 +116,15 @@ const Training = () => {
             >
               {/* Certificate Image */}
               <div
-                className="relative h-48 bg-surface
-                border-b border-border
-                flex items-center justify-center
-                overflow-hidden"
+                className="relative h-56 bg-surface
+  border-b border-border overflow-hidden"
               >
                 <img
                   src={certificate.image}
                   alt={`${certificate.title} certificate`}
-                  className="w-full h-full object-contain p-3
-                  transition-transform duration-500
-                  group-hover:scale-105"
+                  className="w-full h-full object-contain
+  transition-transform duration-500
+  group-hover:scale-[1.02]"
                   loading="lazy"
                 />
 
