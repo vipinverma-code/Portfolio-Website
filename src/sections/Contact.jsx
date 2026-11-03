@@ -1,5 +1,6 @@
 import React from 'react'
 import { Mail, Phone, MapPin, Send } from 'lucide-react';
+import { emailjs } from '@emailjs/browser';
 import Button from '../components/Button';
 const ContactInfo = [
   {
@@ -30,10 +31,51 @@ const Contact = () => {
      name: "",
      email: "",
      message: ""
-  })
+  });
+  const [isLoading, setIsLoading] = useState(false);
+  const [submitStatus, setSubmitStatus] = useState(
+    {
+      type: null,  
+      // 'success' or 'error'
+      message: "",
+    });
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+    setIsLoading(true);
+    setSubmitStatus({type: null, message: ""});
+    try {
+      const serviceId = import.meta.env.VITE_EMAILJS_SERVICE_ID;
+      const templateId = import.meta.env.VITE_EMAILJS_TEMPLATE_ID;
+      const publicKey = import.meta.env.VITE_EMAILJS_PUBLIC_KEY;
+
+      if (!serviceId || !templateId || !publicKey) {
+        throw new Error(
+          "EmailJS configuration is missing. Please check your environment variable."
+        );
+      }
+
+      await emailjs.send(serviceId, templateId, {
+        name: formData.name,
+        email: formData.email,
+        message: formData.message,
+      }, publicKey );
+
+      setSubmitStatus({
+        type: "success",
+        message: "Message sent successfully! I'll get back to you soon.",
+      });
+    } catch (error){
+      console.error("EmailJS error:", error);
+      setSubmitStatus({
+        type: "error",
+        message: error.text || "Failed to send message. Please try again later.",
+      });
+
+    } finally {
+      setIsLoading(false)
+
+    }
   };
 
   return (
@@ -63,7 +105,7 @@ const Contact = () => {
 
         <div className="grid lg:grid-cols-2 gap-12 max-w-5xl mx-auto">
           <div className="glass p-8 rounded-3xl border border-primary/30 animate-fade-in animation-delay-300">
-            <form className="space-y-6">
+            <form className="space-y-6 onSubmit={handleSubmit}">
               <div>
                 <label
                   htmlFor="name"
@@ -130,8 +172,24 @@ const Contact = () => {
                 />
               </div>
 
-              <Button className='w-full type="submit" size="lg" '>
-                Send Message
+              <Button
+                className="w-full"
+                type="submit"
+                size="lg"
+                disabled={isLoading}
+              >
+                {isLoading ? (
+                  <>
+                  Sending...
+                  </>
+                ) : (
+                  <>
+                  Send Message
+                  <Send className='w-5 h-5'/>
+                  </>
+                )
+                }
+
                 <Send />
               </Button>
             </form>
