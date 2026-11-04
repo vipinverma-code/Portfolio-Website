@@ -1,6 +1,7 @@
 import React from 'react'
 import { Mail, Phone, MapPin, Send, CheckCircle, AlertCircle } from 'lucide-react';
-import { emailjs } from '@emailjs/browser';
+import { useState } from 'react';
+import emailjs from "@emailjs/browser";
 import Button from '../components/Button';
 const ContactInfo = [
   {
@@ -103,7 +104,7 @@ const Contact = () => {
 
         <div className="grid lg:grid-cols-2 gap-12 max-w-5xl mx-auto">
           <div className="glass p-8 rounded-3xl border border-primary/30 animate-fade-in animation-delay-300">
-            <form className="space-y-6 onSubmit={handleSubmit}">
+            <form className="space-y-6" onSubmit={handleSubmit}>
               <div>
                 <label
                   htmlFor="name"
