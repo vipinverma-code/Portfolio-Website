@@ -1,5 +1,5 @@
 import React from 'react'
-import { Mail, Phone, MapPin, Send } from 'lucide-react';
+import { Mail, Phone, MapPin, Send, CheckCircle, AlertCircle } from 'lucide-react';
 import { emailjs } from '@emailjs/browser';
 import Button from '../components/Button';
 const ContactInfo = [
@@ -54,7 +54,6 @@ const Contact = () => {
           "EmailJS configuration is missing. Please check your environment variable."
         );
       }
-
       await emailjs.send(serviceId, templateId, {
         name: formData.name,
         email: formData.email,
@@ -74,7 +73,6 @@ const Contact = () => {
 
     } finally {
       setIsLoading(false)
-
     }
   };
 
@@ -182,16 +180,35 @@ const Contact = () => {
                   <>
                   Sending...
                   </>
-                ) : (
+                ) : 
+                (
                   <>
                   Send Message
                   <Send className='w-5 h-5'/>
                   </>
-                )
-                }
-
-                <Send />
+                ) }
               </Button>
+
+              {submitStatus.type && (
+
+              <div
+              className={`flex items-center gap-3
+              p-4 rounded-xl ${
+                submitStatus.type === "success"
+                ? "bg-green-500/10 border  border-green-500/20 text-green-400"
+                : "bg-red-500/10 border border-red-500/20 text-red-400"
+              }`}>
+
+                {submitStatus.type === "success" ? 
+                (
+                  <CheckCircle className='w-5 h-5 flex-shrink-0'/>
+                ) : (
+                  <AlertCircle className='w-5 h-5 flex-shrink-0'/>
+                )}
+
+                <p className='text-sm'>{submitStatus.message}</p>
+              </div>
+              )}
             </form>
           </div>
         </div>
