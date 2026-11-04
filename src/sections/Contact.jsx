@@ -128,25 +128,20 @@ const Contact = () => {
               <div>
                 <label
                   htmlFor="email"
-                  type="email"
-                  required
-                  placeholder="Your email..."
-                  value={formData.email}
-                  onChange={(e) =>
-                    setFormData({
-                      ...formData,
-                      email: e.target.value,
-                    })
-                  }
                   className="block text-sm font-medium mb-2"
                 >
                   Email
                 </label>
                 <input
+                  id="email"
+                  type="email"
                   required
-                  placeholder="your@email.com"
-                  className="w-full px-4 py-3 bg-surface rounded-xl border
-                 border-border focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-all"
+                  placeholder="Your email..."
+                  value={formData.email}
+                  onChange={(e) =>
+                    setFormData({ ...formData, email: e.target.value })
+                  }
+                  className="w-full px-4 py-3 bg-surface rounded-xl border border-border focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-all"
                 />
               </div>
               <div>
@@ -178,37 +173,32 @@ const Contact = () => {
                 disabled={isLoading}
               >
                 {isLoading ? (
+                  <>Sending...</>
+                ) : (
                   <>
-                  Sending...
+                    Send Message
+                    <Send className="w-5 h-5" />
                   </>
-                ) : 
-                (
-                  <>
-                  Send Message
-                  <Send className='w-5 h-5'/>
-                  </>
-                ) }
+                )}
               </Button>
 
               {submitStatus.type && (
-
-              <div
-              className={`flex items-center gap-3
+                <div
+                  className={`flex items-center gap-3
               p-4 rounded-xl ${
                 submitStatus.type === "success"
-                ? "bg-green-500/10 border  border-green-500/20 text-green-400"
-                : "bg-red-500/10 border border-red-500/20 text-red-400"
-              }`}>
+                  ? "bg-green-500/10 border  border-green-500/20 text-green-400"
+                  : "bg-red-500/10 border border-red-500/20 text-red-400"
+              }`}
+                >
+                  {submitStatus.type === "success" ? (
+                    <CheckCircle className="w-5 h-5 flex-shrink-0" />
+                  ) : (
+                    <AlertCircle className="w-5 h-5 flex-shrink-0" />
+                  )}
 
-                {submitStatus.type === "success" ? 
-                (
-                  <CheckCircle className='w-5 h-5 flex-shrink-0'/>
-                ) : (
-                  <AlertCircle className='w-5 h-5 flex-shrink-0'/>
-                )}
-
-                <p className='text-sm'>{submitStatus.message}</p>
-              </div>
+                  <p className="text-sm">{submitStatus.message}</p>
+                </div>
               )}
             </form>
           </div>
