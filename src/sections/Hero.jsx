@@ -75,13 +75,27 @@ const Hero = () => {
             </div>
             {/* CTAs*/}
             <div className="flex flex-wrap gap-4 animate-fade-in animation-delay-300">
-              <Button size="lg">
-                Contact Me <ArrowRight className="w-5 h-5" />
+              <Button
+                size="lg"
+                onClick={() => {
+                  document.getElementById("contect")?.scrollIntoView({
+                    behavior: "smooth",
+                  });
+                }}
+              >
+                Contact Me
+                <ArrowRight className="w-5 h-5" />
               </Button>
               <AnimatedBorderButton>
-                <Download className="w-5 h-5" />
+                <a
+                  href="/Vipin-Verma-Resume.pdf"
+                  download="Vipin-Verma-Resume.pdf"
+                  className="flex items-center gap-2"
+                >
+                  <Download className="w-5 h-5" />
                   Download CV
-                </AnimatedBorderButton>
+                </a>
+              </AnimatedBorderButton>
             </div>
 
             {/* Social Links */}

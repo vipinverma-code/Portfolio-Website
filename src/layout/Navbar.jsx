@@ -1,7 +1,7 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import Button from "../components/Button";
 import { Menu, X } from "lucide-react";
-import { useState } from "react";
+
 const navLinks = [
   { href: "#about", label: "About" },
   { href: "#projects", label: "Projects" },
@@ -10,20 +10,34 @@ const navLinks = [
 ];
 
 const Navbar = () => {
-  const[isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
-  useEffect(()=>{
+
+  useEffect(() => {
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 50);
-  
     };
+
     window.addEventListener("scroll", handleScroll);
-    return ()=> window.removeEventListener("scroll", handleScroll);
-  },[]);
+
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
+  const scrollToContact = () => {
+    setIsMobileMenuOpen(false);
+
+    document.getElementById("contect")?.scrollIntoView({
+      behavior: "smooth",
+    });
+  };
+
   return (
-    <header className={`fixed top-0 left-0 right-0 transition-all duration-500
-    ${isScrolled ? "glass-strong py-3" : "bg-transparent py-5"} z-50`}>
+    <header
+      className={`fixed top-0 left-0 right-0 transition-all duration-500
+      ${isScrolled ? "glass-strong py-3" : "bg-transparent py-5"} z-50`}
+    >
       <nav className="container mx-auto px-6 flex items-center justify-between">
+        {/* Logo */}
         <a
           href="#"
           className="text-xl font-bold tracking-tight hover:text-primary"
@@ -31,31 +45,40 @@ const Navbar = () => {
           PM<span className="text-primary">.</span>
         </a>
 
-        {/* Desktop Nav */}
-        <div className="items-center gap-1 ">
+        {/* Desktop Navigation */}
+        <div className="hidden md:flex items-center gap-1">
           <div className="glass rounded-full px-2 py-1 flex items-center gap-1">
             {navLinks.map((link, index) => (
               <a
                 href={link.href}
                 key={index}
-                className="px-4 py-2 text-sm text-muted-foreground hover:text-foreground rounded-full hover:bg-surface "
+                className="px-4 py-2 text-sm text-muted-foreground hover:text-foreground rounded-full hover:bg-surface"
               >
                 {link.label}
               </a>
             ))}
           </div>
         </div>
-        {/* CTA Button */}
+
+        {/* Desktop Contact Button */}
         <div className="hidden md:block">
-          <Button size="sm">Contact Me</Button>
+          <Button size="sm" onClick={scrollToContact}>
+            Contact Me
+          </Button>
         </div>
+
         {/* Mobile Menu Button */}
-        <button className="md:hidden p-2 text-foreground cursor-pointer" onClick={()=> setIsMobileMenuOpen((prev)=> !prev)}>
-          {isMobileMenuOpen ? <X size={24}/> :<Menu size={24} />}
+        <button
+          className="md:hidden p-2 text-foreground cursor-pointer"
+          onClick={() => setIsMobileMenuOpen((prev) => !prev)}
+          aria-label={isMobileMenuOpen ? "Close menu" : "Open menu"}
+          aria-expanded={isMobileMenuOpen}
+        >
+          {isMobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
         </button>
       </nav>
-      {/* Mobile Menu*/}
 
+      {/* Mobile Navigation */}
       {isMobileMenuOpen && (
         <div className="md:hidden glass-strong animate-fade-in">
           <div className="container mx-auto px-6 py-6 flex flex-col gap-4">
@@ -70,11 +93,13 @@ const Navbar = () => {
               </a>
             ))}
 
-            <Button onClick={()=> setIsMobileMenuOpen(false)}>Contact Me</Button>
+            {/* Mobile Contact Button */}
+            <Button onClick={scrollToContact}>Contact Me</Button>
           </div>
         </div>
       )}
     </header>
   );
 };
+
 export default Navbar;

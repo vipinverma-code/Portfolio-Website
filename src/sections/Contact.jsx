@@ -8,21 +8,22 @@ const ContactInfo = [
     icon: Mail,
     label: "Email",
     value: "vipinverma4224@gmail.com",
-    href: "mailto:vipinverma4224@gmail.com",
+    href: "https://mail.google.com/mail/?view=cm&to=vipinverma4224@gmail.com",
   },
 
   {
     icon: Phone,
     label: "Phone",
-    value : "+1 (555) 123-4567",
-    href: "tel:+15551234567",
+    value: "+91 9721851467",
+    href: "tel:+9721851467",
   },
 
   {
     icon: MapPin,
     label: "Location",
     value: "Lucknow",
-    href: "#"
+    href: "mailto:vipinverma4224@gmail.com",
+    // href: "https://www.google.com/maps/place/Lucknow,+Uttar+Pradesh/@26.8489028,80.7776995,11z/data=!3m1!4b1!4m6!3m5!1s0x399bfd991f32b16b:0x93ccba8909978be7!8m2!3d26.8466937!4d80.946166!16zL20vMDIydHE0?entry=ttu&g_ep=EgoyMDI2MTEwMi4wIKXMDSoASAFQAw%3D%3D",
   },
 ];
 
@@ -202,10 +203,50 @@ const Contact = () => {
               )}
             </form>
           </div>
+
+          {/* Contact Info */}
+          <div className="space-y-6 animate-fade-in animation-delay-400">
+            <div className="glass rounded-3xl p-8">
+              <h3 className="text-xl font-semibold mb-6">
+                Contact Information
+              </h3>
+              <div className="space-y-4">
+                {ContactInfo.map((item, i) => (
+                  <a
+                    key={i}
+                    href={item.href}
+                    className="flex items-center gap-4 p-4 rounded-xl hover:bg-surface transition-colors group"
+                  >
+                    <div className="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center group-hover:bg-primary/20 transition-colors">
+                      <item.icon className="w-5 h-5 text-primary" />
+                    </div>
+                    <div>
+                      <div className="text-sm text-muted-foreground">
+                        {item.label}
+                      </div>
+                      <div className="font-medium">{item.value}</div>
+                    </div>
+                  </a>
+                ))}
+              </div>
+            </div>
+
+            {/* Availability Card */}
+            <div className="glass rounded-3xl p-8 border border-primary/30">
+              <div className="flex items-center gap-3 mb-4">
+                <span className="w-3 h-3 bg-green-500 rounded-full animate-pulse" />
+                <span className="font-medium">Currently Available</span>
+              </div>
+              <p className="text-muted-foreground text-sm">
+                I'm currently open to new opportunities and exciting projects.
+                Whether you need a full-time engineer or a freelance consultant,
+                let's talk!
+              </p>
+            </div>
+          </div>
         </div>
       </div>
     </section>
   );
 }
-
 export default Contact
