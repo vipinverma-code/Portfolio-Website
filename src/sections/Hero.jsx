@@ -4,7 +4,6 @@ import Button from "../components/Button";
 import { AnimatedBorderButton } from "../components/AnimatedBorderButton";
 import { FaGithub, FaLinkedinIn } from "react-icons/fa";
 
-
 const skills = [
   "React",
   "PostgreSQL",
