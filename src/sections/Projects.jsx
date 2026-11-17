@@ -9,7 +9,7 @@ const projects = [
       "A modern, responsive SaaS landing page built with React and Tailwind CSS. Features a clean interface, reusable components, and polished layouts to deliver a seamless user experience.",
     image: "/projects/project1.png",
     tags: ["React.js", "Tailwind CSS", "JavaScript"],
-    link: "#",
+    link: "https://zenvora-saas-ui.netlify.app",
     github: "https://github.com/vipinverma-code/zenvora-saas-ui",
   },
 
