@@ -19,7 +19,7 @@ const projects = [
       "A professional marketing agency website designed with a modern UI, engaging visuals, and responsive layouts to showcase digital services and create a strong online presence.",
     image: "/projects/project2.png",
     tags: ["React.js", "Tailwind CSS", "JavaScript"],
-    link: "#",
+    link: "https://wehandleai.netlify.app",
     github: "https://github.com/vipinverma-code/wehandle.ai",
   },
 
@@ -29,7 +29,7 @@ const projects = [
       "A dynamic news application that integrates APIs to fetch and display news articles. Features organized content, intuitive navigation, and a smooth news-browsing experience.",
     image: "/projects/project3.png",
     tags: ["React.js", "JavaScript", "API Integration", "Bootstrap"],
-    link: "#",
+    link: "https://latestnewsify.netlify.app/",
     github: "https://github.com/vipinverma-code/Newsify",
   },
 
@@ -49,7 +49,7 @@ const projects = [
       "A music streaming interface inspired by Spotify, featuring a familiar player layout, organized playlists, and an engaging design built with core frontend technologies.",
     image: "/projects/project5.png",
     tags: ["HTML", "CSS", "JavaScript"],
-    link: "#",
+    link: "https://ultraspotify.netlify.app/",
     github: "https://github.com/vipinverma-code/Spotify-Clone",
   },
 
